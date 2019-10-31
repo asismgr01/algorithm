@@ -67,7 +67,7 @@ struct Node* insert(struct Node* head,int data){
 }
 /*
 function to traverse binary search tree(inorder traversal)
-Inorder (Left, Root, Right)
+Inorder Traversal(Left, Root, Right)
 Algorithm Inorder(tree)
    1. Traverse the left subtree, i.e., call Inorder(left-subtree)
    2. Visit the root.
@@ -80,4 +80,36 @@ void inOrder(struct Node* head){
     inOrder(head->left);
     printf("%d,",head->data);
     inOrder(head->right);
+}
+/*function to traverse binary search tree(preorder traversal)
+Preorder Traversal (Root,Left,Right)
+Algorithm Preorder(tree)
+   1. Visit the root.
+   2. Traverse the left subtree, i.e., call Preorder(left-subtree)
+   3. Traverse the right subtree, i.e., call Preorder(right-subtree)
+*/ 
+void preorder(struct Node* head){
+    if(head == NULL){
+        return;
+    }
+    printf("%d",head->data);
+    preorder(head->left);
+    preorder(head->right);
+}
+/*
+function to traverse binary search tree(postorder traversal)
+Postorder Traversal (Left,Right,Root):
+Algorithm Postorder(tree)
+   1. Traverse the left subtree, i.e., call Postorder(left-subtree)
+   2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+   3. Visit the root.
+
+*/
+void postorder(struct Node* head){
+    if(head == NULL){
+        return;
+    }
+    postorder(head->left);
+    postorder(head->right);
+    printf("%d",head->data);
 }
